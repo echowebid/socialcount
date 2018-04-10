@@ -8,7 +8,6 @@ abstract class Api  {
     protected $apikey;
     protected $data;
     protected $endpoint;
-    protected $get;
 
     public function __construct() {
         $this->endpoint = config('socialcount.endpoint', 'https://api.sharedcount.com/v1.0/');
@@ -73,31 +72,31 @@ abstract class Api  {
     }
 
     public function facebook() {
-        if ( empty($this->data) || !isset($this->data['facebook']['total_count']) )
+        if ( empty($this->data) || !isset($this->data['Facebook']['total_count']) )
             return 0;
 
-        return $this->data['facebook']['total_count'];
+        return $this->data['Facebook']['total_count'];
     }
 
     public function facebookComment() {
-        if ( empty($this->data) || !isset($this->data['facebook']['comment_count']) )
+        if ( empty($this->data) || !isset($this->data['Facebook']['comment_count']) )
             return 0;
 
-        return $this->data['facebook']['comment_count'];
+        return $this->data['Facebook']['comment_count'];
     }
 
     public function facebookReaction() {
-        if ( empty($this->data) || !isset($this->data['facebook']['reaction_count']) )
+        if ( empty($this->data) || !isset($this->data['Facebook']['reaction_count']) )
             return 0;
 
-        return $this->data['facebook']['reaction_count'];
+        return $this->data['Facebook']['reaction_count'];
     }
 
     public function facebookShare() {
-        if ( empty($this->data) || !isset($this->data['facebook']['share_count']) )
+        if ( empty($this->data) || !isset($this->data['Facebook']['share_count']) )
             return 0;
 
-        return $this->data['facebook']['share_count'];
+        return $this->data['Facebook']['share_count'];
     }
 
     public function googlePlus() {
